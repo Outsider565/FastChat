@@ -301,7 +301,11 @@ if __name__ == "__main__":
     # Show match stats and prompt enter to continue
     print("Stats:")
     print(json.dumps(match_stat, indent=4))
-    input("Press Enter to confirm...")
+    import os
+    if os.environ.get("IGNORE_CONFIRM") == "1":
+        print("Ignoring confirmation...")
+    else:
+        input("Press Enter to confirm...")
 
     # Play matches
     if args.parallel == 1:
