@@ -145,6 +145,8 @@ def get_model_answers(
                         output_ids,
                         spaces_between_special_tokens=False,
                     )
+                    if "### Instruction" in output:
+                        output = output[: output.find("### Instruction")]
                     if conv.stop_str and isinstance(conv.stop_str, list):
                         stop_str_indices = sorted(
                             [
