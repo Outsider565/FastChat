@@ -4,6 +4,7 @@ python3 show_result.py --mode [single|pairwise-baseline|pairwise-all]
 """
 import argparse
 import pandas as pd
+pd.set_option('display.max_rows', 500)
 
 
 def display_result_single(args):
